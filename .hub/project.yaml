@@ -1,0 +1,19 @@
+id: 1c-mcp-lib
+scope: personal
+name: 1C MCP Lib (onec-mcp-lib)
+status: active
+workspace: personal-tooling
+role: mcp-lib
+stack: [python, mcp]
+sync:
+  remote: github
+  cloud_cursor: true
+agents:
+  primary: cursor
+  cloud: true
+  entry: AGENTS.md
+hub: dev-hub-personal
+related: [1c-mcp-bsl, 1c-mcp-ssl, 1c-mcp-templates, 1c-mcp-docs, 1c-mcp-code-checker, 1c-mcp-data]
+notes: |
+  Shared Python package for dorynkov 1C MCP servers.
+  GitHub repo: onec-mcp-lib. Local folder: 1c-mcp-lib.
