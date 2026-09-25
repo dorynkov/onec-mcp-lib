@@ -13,7 +13,7 @@ agents:
   cloud: true
   entry: AGENTS.md
 hub: dev-hub-personal
-related: [1c-mcp-bsl, 1c-mcp-ssl, 1c-mcp-templates, 1c-mcp-docs, 1c-mcp-code-checker, 1c-mcp-data]
+related: [1c-mcp-bsl, 1c-mcp-ssl, 1c-mcp-templates, 1c-mcp-docs, 1c-mcp-code-checker, 1c-mcp-data, admin-tools]
 notes: |
   Shared Python package for dorynkov 1C MCP servers.
   GitHub repo: onec-mcp-lib. Local folder: 1c-mcp-lib.

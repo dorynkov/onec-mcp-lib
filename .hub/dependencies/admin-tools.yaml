@@ -1,0 +1,13 @@
+id: admin-tools
+kind: infra
+role: personal infra sibling
+repo: https://github.com/dorynkov/admin-tools
+local_path: E:/Проекты/personal/admin-tools
+pin:
+  version: null
+  git_commit: null
+  source: manual
+update:
+  policy: manual
+  channel: sibling-pull
+  notes: "Secrets stay local; ADMINTOOLS_ROOT override allowed."
