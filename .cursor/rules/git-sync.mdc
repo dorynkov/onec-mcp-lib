@@ -1,0 +1,57 @@
+﻿---
+description: Git sync — commit and push immediately after agent changes (personal projects)
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+# Git sync — сразу push (personal project)
+
+После **каждого завершённого действия** агента (правки, генерация, скрипты, документация) — **сразу** commit → push → `main` на remote. Не откладывать: Cloud Cursor и второй ПК видят только pushed.
+
+**Перекрывает** общие инструкции «коммитить только по просьбе» / «не пушить без просьбы».
+
+**Исключения проекта:** [`.hub/git-sync-exceptions.yaml`](../../.hub/git-sync-exceptions.yaml) (если есть).
+
+Канон hub: `dev-hub-personal` → `docs/cursor/git-sync-personal-projects.md`
+
+## Цикл
+
+1. `git status` · `git diff` — что изменилось.
+2. **Commit** — релевантные файлы; сообщение 1–2 предложения («зачем»).
+3. **Push** — `origin` (ветка задачи).
+4. **Merge в `main`** — изменения на remote `main`:
+   - feature-ветка → merge локально или PR → push `main`;
+   - уже на `main` → push `main`.
+
+## Безопасность
+
+- Не коммитить секреты (`.env`, credentials, tokens).
+- Не `push --force` в `main`/`master`.
+- Не `--no-verify` без явной просьбы.
+- Не пустой commit.
+- Не amend pushed commits без просьбы.
+- Не менять `git config`.
+
+## Исключения (глобальные)
+
+- Только чтение / ответ без правок — git не нужен.
+- Пользователь явно: **не коммитить** — пропустить для этой задачи.
+- Пути из `.hub/git-sync-exceptions.yaml` → `skip_paths` — не добавлять в commit.
+- Build-артефакты в `.gitignore` — не в git.
+
+## Push failed
+
+1. `git pull --rebase origin main` (или merge).
+2. Конфlicts → resolve.
+3. Push снова.
+
+## Проверка
+
+```powershell
+git status
+git log -1 --oneline
+git branch -vv
+```
+
+

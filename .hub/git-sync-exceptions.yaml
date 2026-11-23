@@ -1,0 +1,25 @@
+﻿# Git sync exceptions — этот проект
+# Агент читает перед commit; см. .cursor/rules/git-sync.mdc
+
+schema_version: 1
+updated_at: null
+
+# true — отключить auto sync (временно; указать reason)
+skip_entire_sync: false
+skip_entire_sync_reason: ""
+
+# Глобы/пути — never stage (дополнение к .gitignore)
+skip_paths:
+  []
+  # - path: export/
+  #   reason: generated PDF, local only
+  # - path: tmp/
+  #   reason: scratch
+
+# Не push merge в main автоматически (редко; напр. только PR-политика)
+skip_merge_to_main: false
+
+# Задачи/паттерны — пропустить sync если пользователь написал (regex на task context)
+# Обычно пусто — достаточно явной просьбы в чате
+notes: ""
+
