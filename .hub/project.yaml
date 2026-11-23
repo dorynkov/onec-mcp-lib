@@ -12,7 +12,7 @@ agents:
   primary: cursor
   cloud: true
   entry: AGENTS.md
-hub: dev-hub-personal
+hub: hub
 related: [1c-mcp-bsl, 1c-mcp-ssl, 1c-mcp-templates, 1c-mcp-docs, 1c-mcp-code-checker, 1c-mcp-data, admin-tools]
 notes: |
   Shared Python package for dorynkov 1C MCP servers.
